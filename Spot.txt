@@ -41,7 +41,7 @@ Req.Stoploss: Realizar stoploss em 9600.
 Exemplo de requisição de sair posição a mercado:
 http://actioncryptomonitor.com.br/v2/sendSignal/?method=stopfutures&key=SEUWEBHOOK&asset=BTCUSDT
 
-#Requisição de Futures Stop Market#
+#Requisição de Spot Stop Market#
 Legenda:
 Req.Paridade: BTCUSDT.
 ####################################################################
