@@ -1,0 +1,67 @@
+#######################################################
+############# ACTIONCRYPTOMONITOR v2 ##################
+#######################################################
+      https://actioncryptomonitor.com.br/
+      
+     
+1° - Acesse seu menu Conta->Webhook
+2° - Habilite a requisição do Webhook e copie a chave de implementação.
+
+
+Método de requisição: GET
+SSL Obrigátorio: Não
+
+Parâmetros: 
+
+{method} = futures ou spot.
+{key} = sua chave de webhook.
+{typeop} = Long ou Short.
+{asset} = Nome da Paridade.
+{target} = Alvo que deseja executar a ordem em porcentagem.
+{stoploss} = Valor do seu stoploss em porcentagem.
+{leverage} = Sua alavancagem (1 a 125).
+{methodop} = Isolated ou Cross (Isolado consome apenas o valor que você configurou na aba configurações. Cross tem a função de manter sua posição aberta até consumir o seu saldo total de USDT do seu Futures).
+
+
+####################################################################
+Exemplo de requisição Long:
+http://actioncryptomonitor.com.br/v2/sendSignal/?method=futurespercent&key={CHAVE}&typeop=Long&asset=BTCUSDT&target=2&stoploss=5&leverage=10&methodop=Isolated
+
+#Requisição de Futures Long#
+Legenda:
+Req.tipo: Long.
+Req.Paridade: BTCUSDT.
+Req.Target: 2 (Realizar venda automaticamente quando atingir lucro de 2% do valor atual do mercado).
+Req.Stoploss: 5 (Realizar stoploss quando estiver no prejuizo de 5%).
+Req.Avalancagem: 10x.
+Req.Metódo: Isolado.
+####################################################################
+
+
+####################################################################
+Exemplo de requisição Short:
+http://actioncryptomonitor.com.br/v2/sendSignal/?method=futurespercent&key={CHAVE}&typeop=Short&asset=BTCUSDT&target=2&stoploss=5&leverage=10&methodop=Isolated
+
+#Requisição de Futures Short#
+Legenda:
+Req.tipo: Short.
+Req.Paridade: BTCUSDT.
+Req.Target: 2 (Realizar venda automaticamente quando atingir lucro de 2% do valor atual do mercado).
+Req.Stoploss: 5 (Realizar stoploss quando estiver no prejuizo de 5%).
+Req.Avalancagem: 10x.
+Req.Metódo: Isolado.
+####################################################################
+
+
+
+Códigos de erros:
+invalid_signal_data = Você deixou algum parametro em branco.
+invalid_signal_price = Você não completou corretamente o preço de entrada do seu sinal.
+invalid_signal_asset = Paridade escolhida é inválida.
+invalid_signal_type_operation = Tipo de operação é inválido (Permitido apenas Long e Short).
+invalid_signal_method_operation = Método de operação inválido (Permitido apenas Isolated e Cross).
+invalid_signal_leverage = Alavancagem de operação inválida (Permitido de 1 a 125).
+invalid_signal_long_target = No tipo de operação Long, você não pode colocar um target menor que o valor de compra.
+invalid_signal_long_stoploss = No tipo de operação Long, você não pode colocar um stoploss maior que o valor de compra.
+invalid_signal_short_target = No tipo de operação Short, você não pode colocar um target maior que o valor de compra.
+invalid_signal_short_stoploss = No tipo de operação Short, você não pode colocar um stoploss menor que o valor de compra.
