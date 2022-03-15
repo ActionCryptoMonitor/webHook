@@ -1,0 +1,32 @@
+#######################################################
+############# ACTIONCRYPTOMONITOR v2 ##################
+#######################################################
+      https://actioncryptomonitor.com.br/
+      
+     
+1° - Acesse seu menu Conta Trader->Webhook
+2° - Habilite a requisição do Webhook e copie a chave de implementação.
+3° - Entre em sua conta do Tradingview e coloque a opção de alerta como Webhook URL com a seguinte API: https://actioncryptomonitor.com.br/v2/tradingview/
+4° - Complete o campo de Mensagem em seu alerta com os detalhes abaixo.
+
+
+Método de requisição: POST
+SSL Obrigátorio: Sim
+
+Parâmetros: 
+
+{key} = Sua chave de webhook.
+{pair} = Nome da Paridade.
+{type} = Método (entry para compra e exit para venda).
+
+
+####################################################################
+Exemplo de requisição de compra no SPOT:
+API: https://actioncryptomonitor.com.br/v2/tradingview/
+Mensagem: {"key":"b0dabfd7d500a69d147972e1e5d9e471","pair":"BTCUSDT","type":"entry"}
+
+Exemplo de requisição de venda no SPOT:
+API: https://actioncryptomonitor.com.br/v2/tradingview/
+Mensagem: {"key":"b0dabfd7d500a69d147972e1e5d9e471","pair":"BTCUSDT","type":"exit"}
+####################################################################
+
