@@ -23,10 +23,10 @@ Parâmetros:
 ####################################################################
 Exemplo de requisição de compra no SPOT:
 API: https://actioncryptomonitor.com.br/v2/tradingview/
-Mensagem: {"key":"{Chave}","pair":"BTCUSDT","type":"entry"}
+Mensagem: {"key":"{key}","pair":"BTCUSDT","type":"entry"}
 
 Exemplo de requisição de venda no SPOT:
 API: https://actioncryptomonitor.com.br/v2/tradingview/
-Mensagem: {"key":"{Chave}","pair":"BTCUSDT","type":"exit"}
+Mensagem: {"key":"{key}","pair":"BTCUSDT","type":"exit"}
 ####################################################################
 
